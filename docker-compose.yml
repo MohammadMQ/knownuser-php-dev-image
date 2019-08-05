@@ -1,0 +1,37 @@
+#NOTES 
+#This yml file relates to user story 4496 (KnownUser PHP 7 Dev. image)
+#This yml file sets up php execution (without apache server). This file is only meant for testing of php unit test files 
+
+#HOW TO USE THIS YML FILE
+# Make sure docker is running in linux mode
+# Inside a command prompt make sure to stand in the same directory as this (docker-compose.yml) file.
+# Run >"docker-compose build"
+# Run >"docker-compose up"
+# The container will then execute the Tests/TestSuite.php, which lists all those unit test files we want to run.
+# Below is a sample of the cmd output
+    #Attaching to tests
+    #tests    | TestSuite.php
+    #tests    | 1) Expected false, got [Boolean: true] at [/usr/src/myapp/Tests/IntegrationConfigHelpersTest.php line 22]
+    #tests    |      in test_evaluate_contains
+    #tests    |      in ComparisonOperatorHelperTest
+    #tests    |      in Tests/IntegrationConfigHelpersTest.php
+    #tests    |      in AllTests
+    #tests    | FAILURES!!!
+    #tests    | Test cases run: 7/7, Passes: 185, Failures: 1, Exceptions: 0
+    #tests exited with code 1
+
+
+version: '3.3'
+services:
+
+  tests-php7:
+    build:
+      context: .
+      dockerfile: docker-tests-php7.dockerfile
+    container_name: tests-php7
+
+  tests-php5:
+    build:
+      context: .
+      dockerfile: docker-tests-php7.dockerfile
+    container_name: tests-php5
