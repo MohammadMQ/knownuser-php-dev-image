@@ -6,7 +6,7 @@ Create docker image for knownuser where the following is installed
 - Apache
 - PHP v. 5 or v. 7
 
-NB: This image will only contain 4 files:
+This repo will only contain 4 files:
 - docker-compose.yml 
 - docker-tests-php5.dockerfile
 - docker-tests-php.dockerfile.
