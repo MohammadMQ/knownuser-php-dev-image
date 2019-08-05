@@ -12,7 +12,7 @@ This repo will only contain 4 files:
 - docker-tests-php.dockerfile.
 - /Tests/TestSuite.php
 
-These first 3 files are to be placed in the root folder of KnownUser-v3-php repository and the last file is to be placed inside the Tests folder. 
+The first 3 files are to be placed in the root folder of KnownUser-v3-php repository and the last file is to be placed inside the Tests folder. 
 Open the docker-compose.yml file and potin towards the relevant docker-tests-php?.dockerfile (5 or 7)
 run hereafter the following docker commands:
 - docker-compose build
